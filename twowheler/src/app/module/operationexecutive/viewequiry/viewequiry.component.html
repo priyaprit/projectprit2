@@ -1,0 +1,62 @@
+<p>viewequiry works!</p>
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h2 style="margin-bottom:20px;">Enquiry List</h2>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 300px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #3081d7;">
+                        <tr>
+                          <th scope="col">CID</th>
+                          <th scope="col">FName</th>
+                          <th scope="col">LName</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">EmailId</th>   
+                            
+                          <th scope="col">MobileNo</th>  
+                          <th scope="col">PancardNo</th>                                               
+                          <th scope="col">Status</th>
+                          <th scope="col">CibilSCORE</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let e of ellist"> 
+               
+                          <td>{{e.cid}}</td>  
+                          <td>{{e.firstname}}</td> 
+                          <td>{{e.lastname}}</td> 
+                          <td>{{e.age}}</td> 
+                          <td>{{e.email}}</td> 
+                         <td>{{e.mobileno}}</td>
+                         <td>{{e.pancardno}}</td>
+                          <td>{{e.status}}</td> 
+                                  
+                   
+                          <td *ngIf="e.cibilscore==0">
+                           <input type="button" (click)="getCibil(e.cid)" class="btn btn-success" value="Get cibil"> 
+                          </td>
+                          <td *ngIf="e.cibilscore!==0">
+                            {{e.cibilscore}}
+                           </td>
+                             
+                    
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,55 @@
+.left-title{
+    
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(39, 33, 33);
+}
+.result{
+    font-size: 25px;
+    font-weight: 600;
+}
+h5,h6{
+    color: rgb(21, 21, 21);
+}
+.active{
+    background-color: lightgray;
+}
+
+h1{
+    font-size: 35px;
+    color: rgb(22, 21, 21);
+}
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 15px;
+        color: rgb(32, 30, 30);
+    }
+   
+}
+@media only screen and (min-width: 992px) {
+    h1{
+        font-size: 35px;
+        margin-bottom: -20px;   
+    }
+}
+
+
+
+
+.card{
+
+    padding-left: 20px;
+    padding-top: 15px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color:rgb(10, 9, 9);
+    background-color: rgb(145, 227, 227);
+    background-image: linear-gradient(#eaeaf7, #e1e1e3);
+}
+
+
+

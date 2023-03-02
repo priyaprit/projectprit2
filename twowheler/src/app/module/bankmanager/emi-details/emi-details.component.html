@@ -1,0 +1,54 @@
+<p>emi-details works!</p>
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h1 style="margin-bottom:20px;">Applicant List</h1>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #638bc6;">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">emiAmount</th>
+                            <th scope="col">NextEmiDate</th>                          
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                            
+                          </tr>
+                        </thead>
+            
+                        <tbody>
+                          <tr *ngFor="let e of applist"> 
+                 
+                            <td>{{e.emiDetails.id}}</td> 
+                            <!-- <td>{{e.emailid}}</td>  -->
+                            <td>{{e.emiDetails.emiAmountMonthly}}</td> 
+                            <td>{{e.emiDetails.nextemiduedate}}</td> 
+                            <td>{{e.emiDetails.previousemistatus}}</td> 
+                           
+                          
+                            <td>
+                                <div class="add-employee" >
+                                  <button *ngIf="e.emiDetails.previousemistatus=='unpaid'" type="button" mat-raised-button color="success" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal" (click)="getemis(e.cusid)" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Paid</button>
+                                </div>
+                              </td>          
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <div class="top_nav" style="background-color: #49b96c">
+    <div class="left">
+      <div class="logo he">
+        <img class="logtop" src="\assets\img\pngtree-automotive-technology-electric-car-electric-vehicle-turquoise-png-image_1653088.jpg" width="170" height="110" />
+      </div>
+      <h1 class="head">EVCarLoanFinance</h1>
+    </div>
+    <div class="right1">
+      <ul>
+        <li>
+          <a href="#">Email US<br /></a>
+          <p>evcarloanfinance@gmail.com</p>
+        </li>
+
+        <li>
+          <a href="#">Call Us</a>
+          <p>+91 9834779344</p>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button
+        class="btn"
+        (click)="log()"
+        style="
+          height: 40px;
+          width: 127px;
+          background-color: rgb(92, 78, 185);
+          margin-right: 30px;
+        "
+      >
+        Login
+      </button>
+    </div>
+  </div>
+  <div class="manual">
+    <div class="nav" data-spy="affix" data-offset-top="197">
+      <nav>
+        <input type="checkbox" id="click" />
+
+        <ul>
+          
+        <li class="active"><a routerLinkActive="active" routerLink="">Home</a></li>
+        <li><a routerLink="aboutus">About us</a></li>
+        <!-- <li><a routerLink="">What we Offer</a></li> -->
+        <li><a routerLink="apply">process to apply</a></li>
+        <li><a routerLink="emi">Loan EMI calculator</a></li>
+        <li><a routerLink="faq">FAQs</a></li>
+        <li><a routerLink="contactus">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> 
+  <br>
+
+
+
+  
+  <router-outlet></router-outlet>
+   

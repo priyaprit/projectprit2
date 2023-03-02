@@ -1,0 +1,71 @@
+<p>viewapp works!</p>
+<p>view-app works!</p>
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h1 style="margin-bottom:20px;">Applicant List</h1>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color:  #3081d7;">
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">Email Id</th>  
+                          <!-- <th scope="col">sanctionamount</th>                         -->
+                          <th scope="col">Status</th>
+                          <!-- <th scope="col">update</th> -->
+                          <th scope="col">delete</th>
+                          <th scope="col">Action</th>                          
+                        </tr>
+                      </thead>
+                      
+                  
+                  
+                      <tbody>
+                        <tr *ngFor="let e of apppList">
+                                      
+                          <td>{{e.cid}}</td>  
+                          <td>{{e.cname}}</td> 
+                          <td>{{e.age}}</td> 
+                          <td>{{e.emailid}}</td> 
+                          <!-- <td>{{e.sanctionamount}}</td>  -->
+                          <td>{{e.status}}</td> 
+                          <!-- <td>
+                            <div style="width:100px">
+                              <button class="btn btn-primary" mat-raised-button color="primary" (click)="editSanction(e)">edit</button>
+                            </div><br></td>    -->            
+                          <td> 
+                            <div style="width:100px">
+                              <button class="btn btn-primary" mat-raised-button color="primary" (click)="update(e)">Update</button>
+                            </div><br></td> 
+                             <td> <div style="width:100px">
+                                <button class="btn btn-primary" mat-raised-button color="primary" (click)="delete(e)">Delete</button>
+                              </div><br></td>
+                            <td><div> <!--</div>style="width:100px"> -->
+                                <button class="btn btn-primary" mat-raised-button color="primary" (click)="sanction(e.sanction.sanctionId)">Sanction</button>
+                              </div>
+                          </td>
+                          <td>
+                            <div >
+                              <button class="btn btn-primary" mat-raised-button color="primary" (click)="sendmail(e.cid)">Send</button>
+                            </div><br></td>                     
+          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

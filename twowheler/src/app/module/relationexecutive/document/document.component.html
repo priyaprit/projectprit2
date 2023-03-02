@@ -1,0 +1,50 @@
+
+<p>documentupload works!</p>
+
+<div class="card">
+    <div class="card-header">Upload Documents</div>
+    <div class="card-body">
+        <form novalidate [formGroup]="doc" (ngSubmit)="Submit()">
+            <div>
+            
+                Application Id
+            <input type="text" class="form-control" formControlName="cid" disabled >
+            </div><pre></pre>
+            
+                <div *ngIf="this.rs.c.cid!=0">
+          
+                <div class="custom-file">
+                    Identity Proof <input type="file" class="form-control" id="importFile1" (change)="onselectFile1($event)">
+                   
+                </div><pre></pre>
+
+            <div class="custom-file">
+                Address Proof <input type="file" class="form-control" id="importFile2" (change)="onselectFile5($event)">
+       
+            </div><br><pre></pre>
+
+            <div class="custom-file">
+                Income Proof1 <input type="file" class="form-control" id="importFile3"
+                    (change)="onselectFile2($event)">
+               
+            </div><br><pre></pre>
+            <div class="custom-file">
+                Income Proof2 <input type="file" class="form-control" id="importFile4"
+                    (change)="onselectFile3($event)">
+            
+            </div><br><pre></pre>
+            <div class="custom-file">
+                Income Proof3 <input type="file" class="form-control" id="importFile5" (change)="onselectFile4($event)">
+       
+            </div>
+
+            <br><pre></pre>
+            <input type="submit" value="submit">
+            <!-- <div class="form-group">
+                <button mat-raised-button color="primary">
+                    <i class="fas fa-file-import"></i> Upload Documents </button>
+            </div> -->
+        </div>
+        </form>
+    </div>
+</div>

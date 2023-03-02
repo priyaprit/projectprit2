@@ -1,0 +1,156 @@
+<p>creditmanager works!</p>
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h1 style="margin-bottom:5px;">Enquiry List</h1>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 250px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #3081d7;">
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">Email Id</th>                          
+                          <th scope="col">Status</th>
+                          <th scope="col">Action</th>
+                          
+                        </tr>
+                      </thead>
+                     
+                      <tbody>
+                        <tr *ngFor="let e of applist"> 
+                          
+                           <td>{{e.cid}}</td>  
+                          <td>{{e.cname}}</td> 
+                          <td>{{e.age}}</td> 
+                          <td>{{e.emailid}}</td> 
+                          <td>{{e.status}}</td> 
+                                              
+                          <td>
+                            <div>
+                                 <button mat-raised-button color="primary" (click)="image(e.cid)">getDocuments</button> 
+                              </div>
+                          </td>                     
+          
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<div *ngIf="retrievedDoc.cid!=0">
+  <h1 style="text-align: center;">Documents of Application id-{{retrievedDoc.cid}}</h1>
+  <mat-card>
+    <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+  <mat-horizontal-stepper [linear]="false" #stepper animationDuration="2000">
+    
+    <mat-step label="profilePhoto">
+      
+        <ng-template matStepLabel>profilePhoto</ng-template>
+        <img [src]="'data:image/jpeg;base64,'+retrievedDoc.profilePhoto" height="200">
+        <div class="example-button-row">
+          <button  mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      
+    </mat-step>
+
+    
+    <mat-step label="signature">
+      
+        <ng-template matStepLabel>signature</ng-template>
+        
+        <img [src]="'data:image/jpeg;base64,'+retrievedDoc.signature" height="200">
+
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      
+    </mat-step>
+
+        <mat-step label="pancard">
+      
+        <ng-template matStepLabel>pancard</ng-template>
+        <img [src]="'data:image/jpeg;base64,'+retrievedDoc.pancard" height="200">
+  
+ 
+        <div>
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+    
+    </mat-step>
+    <mat-step label="adharcardaddressproof">
+      
+        <ng-template matStepLabel>adharcardaddressproof</ng-template>
+        <img [src]="'data:image/jpeg;base64,'+retrievedDoc.adharcardaddressproof" height="200">
+
+ 
+        <div>
+          <button mat-raised-button  matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+     
+    </mat-step>
+
+
+
+
+    <mat-step label="incomeproof">
+      
+        <ng-template matStepLabel>incomeproof</ng-template>
+        <img [src]="'data:image/jpeg;base64,'+retrievedDoc.incomeproof" height="200">
+        <div>      
+          <ng-template matStepLabel>Done</ng-template>
+          You are now done.
+          <div>
+            <button mat-raised-button matStepperPrevious>Back</button>          
+           
+              <button *ngIf="retrievedDoc.cid!=0"  mat-raised-button color="primary" (click)="verification(retrievedDoc.cid)"  data-bs-toggle="modal"
+              data-bs-target="#exampleModal" >Verified</button> 
+              <button *ngIf="retrievedDoc.cid!=0"  mat-raised-button color="warn"  (click)="verificationFailed(retrievedDoc.cid)"  data-bs-toggle="modal"
+              data-bs-target="#exampleModal" >Failed</button> 
+          </div>
+        </div>
+      
+
+    </mat-step>
+ 
+  </mat-horizontal-stepper>
+</mat-card-content>
+</mat-card>
+</div>
+
+<div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+
+   <img src="..\assets\img\success.jpeg" width="200px" height="200" style="margin-left: 30%;">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+     
+          
+
+

@@ -1,0 +1,49 @@
+<p>viewapplication works!</p>
+<p>viewapplication works!</p>
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h2 style="margin-bottom:20px;">Enquiry List</h2>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 300px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #3081d7;">
+                        <tr>
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Rate Of Interest</th>
+                            <th scope="col">Tenure</th> 
+                            <th scope="col">Email Id</th> 
+
+                              
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let e of applist"> 
+               
+                          <td>{{e.cusid}}</td>  
+                          <td>{{e.name}}</td> 
+                          <td>{{e.sanctionAmount}}</td> 
+                          <td>{{e.rateofInt}}</td> 
+                          <td>{{e.tenure}}</td> 
+                         <td>{{e.emailid}}</td>
+                         
+                         </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

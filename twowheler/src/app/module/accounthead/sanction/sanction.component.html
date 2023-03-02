@@ -1,0 +1,61 @@
+<p>sanction works!</p>
+
+<h1 style="text-align: center;">Sanction Letter</h1>
+ <mat-card>
+  <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+
+    <form [formGroup]="sanctionletter" (ngSubmit)="onSave()">
+      <ng-template matStepLabel>Sanction Letter</ng-template>
+
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="SanctionId" formControlName="sanctionId">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="sanctionDate" formControlName="sanctionDate">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="applicantName" formControlName="applicantName">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text" class="form-control"  placeholder="contactDetails" formControlName="contactDetails">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="productHomeEnquiry" formControlName="productHomeEnquiry">
+    </mat-form-field><br>     
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="loanAmountSanctioned" formControlName="loanAmountSanctioned">
+    </mat-form-field><br>
+    <mat-form-field>
+      <input matInput type="text"  class="form-control"  placeholder="interestType" formControlName="interestType">
+    </mat-form-field><br>
+    <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="rateOfInterest" formControlName="rateOfInterest">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="loanTenure" formControlName="loanTenure">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="monthlyEmiAmount" formControlName="monthlyEmiAmount">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="modeOfPayment" formControlName="modeOfPayment">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="remarks" formControlName="remarks">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="termsCondition" formControlName="termsCondition">
+      </mat-form-field><br>
+      <mat-form-field>
+        <input matInput type="text"  class="form-control"  placeholder="status" formControlName="status">
+      </mat-form-field><br>
+      <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    
+</form>
+
+</mat-card-content>
+</mat-card>  
+
+

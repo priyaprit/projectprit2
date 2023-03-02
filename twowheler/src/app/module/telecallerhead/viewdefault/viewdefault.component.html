@@ -1,0 +1,73 @@
+<p>viewdefault works!</p>
+<section class="intro">
+    <div class="bg-image h-100" >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="text-center pt-5">      
+            <h2 style="margin-bottom:20px;">Default List</h2>          
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative; height: 300px; ">
+                    <table class="table table-striped mb-0">
+                      <thead style="background-color: #3081d7;">
+                        <tr>
+                          <th scope="col">Customer ID</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Amount</th>
+                          <th scope="col">RateOfInterest</th>
+                          <th scope="col">Tenure</th>  
+                          <th scope="col">Email Id</th> 
+                          <th scope="col">defaulterCount</th>
+                          <th scope="col">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let e of applist"> 
+               
+                          <td>{{e.cusid}}</td>  
+                          <td>{{e.name}}</td> 
+                          <td>{{e.sanctionAmount}}</td> 
+                          <td>{{e.rateofInt}}</td>
+                          <td>{{e.tenure}}</td> 
+                          <td>{{e.emailid}}</td>
+                          <td>{{e.ledger.defaulterCount}}</td>
+                          <td>
+                            <div class="add-employee" >
+                              <button  *ngIf="e.ledger.defaulterCount>=3" type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal" (click)="notice(e.cusid)" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">Notice</button> 
+                            </div>
+                          </td>
+                                  
+                   
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+  
+     <!-- <img src="..\assets\img\success.jpeg" width="200px" height="200" style="margin-left: 30%;"> -->
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
